@@ -37,4 +37,10 @@ class RVAdapter(
     }
 
     override fun getItemCount(): Int = dataList.size
+
+    fun setData(data: ArrayList<UserModel>){
+        dataList.clear()
+        dataList.addAll(data)
+        notifyDataSetChanged()
+    }
 }
