@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
 class RVAdapter(
@@ -17,7 +18,7 @@ class RVAdapter(
         val tvName = view.findViewById<TextView>(R.id.tv_name)
         val tvUsername = view.findViewById<TextView>(R.id.tv_username)
         val tvEmail = view.findViewById<TextView>(R.id.tv_email)
-        val cvMain = view.findViewById<TextView>(R.id.cv_main)
+        val cvMain = view.findViewById<CardView>(R.id.cv_main)
 
     }
 
