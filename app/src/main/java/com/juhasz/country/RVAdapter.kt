@@ -15,9 +15,9 @@ class RVAdapter(
 ): RecyclerView.Adapter<RVAdapter.MyViewHolder>() {
 
     class MyViewHolder(val view: View): RecyclerView.ViewHolder(view){
-        val tvName = view.findViewById<TextView>(R.id.tv_name)
-        val tvUsername = view.findViewById<TextView>(R.id.tv_username)
-        val tvEmail = view.findViewById<TextView>(R.id.tv_email)
+        val name = view.findViewById<TextView>(R.id.name)
+        val username = view.findViewById<TextView>(R.id.username)
+        val email = view.findViewById<TextView>(R.id.email)
         val cvMain = view.findViewById<CardView>(R.id.cv_main)
 
     }
@@ -29,9 +29,9 @@ class RVAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.tvName.text = dataList.get(position).name
-        holder.tvUsername.text = dataList.get(position).username
-        holder.tvEmail.text = dataList.get(position).email
+        holder.name.text = dataList.get(position).name
+        holder.username.text = dataList.get(position).username
+        holder.email.text = dataList.get(position).email
         holder.cvMain.setOnClickListener{
             Toast.makeText(context,""+dataList.get(position).username,Toast.LENGTH_SHORT).show()
         }
