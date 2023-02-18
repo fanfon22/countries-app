@@ -26,6 +26,7 @@ class RVAdapter(
         val layoutInflater = LayoutInflater.from(parent.context)
         val itemView = layoutInflater.inflate(R.layout.items_main,parent,false)
         return MyViewHolder(itemView)
+
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {

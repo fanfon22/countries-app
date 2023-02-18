@@ -18,7 +18,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="Juhasz"/>
+            android:hint="write name"
+
+            />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -29,7 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="Juhasz"/>
+            android:hint="write username"
+            />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -40,9 +43,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:hint="Juhasz"/>
+            android:hint="write email"
+            />
     </com.google.android.material.textfield.TextInputLayout>
-
     <Button
         android:id="@+id/btn_save"
         android:layout_width="match_parent"

@@ -2,8 +2,10 @@ package com.juhasz.country
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.material.button.MaterialButton
 import com.juhasz.country.data.AppDatabase
 import com.juhasz.country.data.User
 
@@ -11,7 +13,7 @@ class EditorActivity : AppCompatActivity() {
     private lateinit var name: EditText
     private lateinit var username: EditText
     private lateinit var email: EditText
-    private lateinit var btnSave: EditText
+    private lateinit var btnSave: Button
     private lateinit var database: AppDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

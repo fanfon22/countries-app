@@ -20,19 +20,19 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name User"/>
+            android:text="name"/>
 
         <TextView
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username User"/>
+            android:text="username"/>
 
         <TextView
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email User"/>
+            android:text="email"/>
         
         
     </LinearLayout>
