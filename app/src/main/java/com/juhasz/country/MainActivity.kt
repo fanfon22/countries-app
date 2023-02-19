@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         recyclerView = findViewById(R.id.rv_main)
+        recyclerView = findViewById(R.id.tv_main)
         fab = findViewById(R.id.fab)
 
         database = AppDatabase.getInstance(applicationContext)

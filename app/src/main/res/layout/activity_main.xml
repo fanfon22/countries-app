@@ -10,20 +10,21 @@
     >
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/rv_main"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/items_main"
+        android:layout_width="match_parent"
+        android:layout_height="387dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="3dp"
 
-        />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/items_main" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tv_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="255dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="2dp"
 
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/row_user" />
