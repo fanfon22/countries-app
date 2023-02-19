@@ -25,7 +25,7 @@ class UserAdapter(var list: List<User>) : RecyclerView.Adapter<UserAdapter.ViewH
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var view = LayoutInflater.from(parent.context).inflate(R.layout.items_main, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.items_main, parent, false)
         return ViewHolder(view)
     }
 
