@@ -27,7 +27,12 @@ class EditorActivity : AppCompatActivity() {
 
         var intent = intent.extras
         if (intent!=null){
-            
+            val id = intent.getInt("id",0)
+            var user = database.userDao().get(id)
+
+            name.setText(user.name)
+            username.setText(user.username)
+            email.setText(user.email)
         }
 
         btnSave.setOnClickListener {
