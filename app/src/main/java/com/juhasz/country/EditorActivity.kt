@@ -25,6 +25,11 @@ class EditorActivity : AppCompatActivity() {
 
         database = AppDatabase.getInstance(applicationContext)
 
+        var intent = intent.extras
+        if (intent!=null){
+            
+        }
+
         btnSave.setOnClickListener {
             if (name.text.length > 0 && username.text.length > 0 && email.text.length > 0) {
 

@@ -1,10 +1,12 @@
 package com.juhasz.country
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Adapter
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,6 +42,28 @@ class MainActivity : AppCompatActivity() {
 
         database = AppDatabase.getInstance(applicationContext)
         adapter2 = UserAdapter(list)
+        adapter2.setDialog(object : UserAdapter.Dialog{
+            override fun onClick(position: Int) {
+                val dialog = AlertDialog.Builder(this@MainActivity)
+                dialog.setTitle(list[position].name)
+                dialog.setItems(R.array.items_option, DialogInterface.OnClickListener{ dialog, which ->
+                    if (which==0){
+                        val intent = Intent(this@MainActivity, EditorActivity::class.java)
+                        intent.putExtra("id", list[position].uid)
+                        startActivity(intent)
+                    } else if(which==1){
+                        database.userDao().delete(list[position])
+                        getData()
+                    }else {
+                        dialog.dismiss()
+                    }
+                    
+                })
+                val dialogView = dialog.create()
+                dialogView.show()
+            }
+
+        })
 
         recyclerView.adapter = adapter2
         recyclerView.layoutManager = LinearLayoutManager(applicationContext,VERTICAL,false)

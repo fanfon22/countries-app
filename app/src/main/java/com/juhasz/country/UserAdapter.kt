@@ -1,5 +1,6 @@
 package com.juhasz.country
 
+import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +10,16 @@ import com.juhasz.country.data.User
 import com.juhasz.country.R;
 
 class UserAdapter(var list: List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+    private lateinit var dialog: Dialog
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
+    fun setDialog(dialog: Dialog){
+        this.dialog = dialog
+    }
+    interface Dialog{
+        fun onClick(position: Int)
+    }
+
+   inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         var name: TextView
         var username: TextView
         var email: TextView
@@ -20,6 +29,9 @@ class UserAdapter(var list: List<User>) : RecyclerView.Adapter<UserAdapter.ViewH
             name = view.findViewById(R.id.name)
             username = view.findViewById(R.id.username)
             email = view.findViewById(R.id.email)
+            view.setOnClickListener{
+                dialog.onClick(layoutPosition)
+            }
 
         }
     }

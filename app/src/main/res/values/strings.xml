@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">countryy</string>
+    <string-array name="items_option">
+        <item>jeden</item>
+        <item>dva</item>
+        <item>tri</item>
+    </string-array>
 </resources>
