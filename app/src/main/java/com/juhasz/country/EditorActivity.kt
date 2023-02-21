@@ -37,15 +37,26 @@ class EditorActivity : AppCompatActivity() {
 
         btnSave.setOnClickListener {
             if (name.text.length > 0 && username.text.length > 0 && email.text.length > 0) {
-
-                database.userDao().insertAll(
-                    User(
-                        null,
-                        name.text.toString(),
-                        username.text.toString(),
-                        email.text.toString(),
+                if(intent!=null){
+                    database.userDao().update(
+                        User(
+                            intent.getInt("id",0),
+                            name.text.toString(),
+                            username.text.toString(),
+                            email.text.toString(),
+                        )
                     )
-                )
+                } else{
+                    database.userDao().insertAll(
+                        User(
+                            null,
+                            name.text.toString(),
+                            username.text.toString(),
+                            email.text.toString(),
+                        )
+                    )
+                }
+
                 finish()
             } else {
                 Toast.makeText(applicationContext, "need fill", Toast.LENGTH_SHORT).show()
