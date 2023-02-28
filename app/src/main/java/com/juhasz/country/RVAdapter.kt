@@ -15,10 +15,10 @@ class RVAdapter(
 ): RecyclerView.Adapter<RVAdapter.MyViewHolder>() {
 
     class MyViewHolder(val view: View): RecyclerView.ViewHolder(view){
-        val capital = view.findViewById<TextView>(R.id.capital)
+        val fifa = view.findViewById<TextView>(R.id.fifa)
         val region = view.findViewById<TextView>(R.id.region)
         val subregion = view.findViewById<TextView>(R.id.subregion)
-        val lang = view.findViewById<TextView>(R.id.lang)
+        val population = view.findViewById<TextView>(R.id.population)
         val cvMain = view.findViewById<CardView>(R.id.cv_main)
 
     }
@@ -31,10 +31,10 @@ class RVAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.capital.text = dataList.get(position).capital
+        holder.fifa.text = dataList.get(position).fifa
         holder.region.text = dataList.get(position).region
         holder.subregion.text = dataList.get(position).subregion
-        holder.lang.text = dataList.get(position).lang
+        holder.population.text = dataList.get(position).population
         holder.cvMain.setOnClickListener{
             Toast.makeText(context,""+dataList.get(position).region,Toast.LENGTH_SHORT).show()
         }

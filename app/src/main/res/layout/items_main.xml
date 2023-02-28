@@ -17,10 +17,10 @@
         >
 
         <TextView
-            android:id="@+id/capital"
+            android:id="@+id/fifa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="capital"/>
+            android:text="fifa"/>
 
         <TextView
             android:id="@+id/region"
@@ -35,10 +35,10 @@
             android:text="subregion"/>
 
         <TextView
-            android:id="@+id/lang"
+            android:id="@+id/population"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="lang"/>
+            android:text="population"/>
         
         
     </LinearLayout>
