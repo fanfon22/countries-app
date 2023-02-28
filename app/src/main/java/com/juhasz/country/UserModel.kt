@@ -2,7 +2,8 @@ package com.juhasz.country
 
 data class UserModel(
     val id:Int,
-    val name: String,
-    val username: String,
-    val email: String,
+    val capital: String,
+    val region: String,
+    val subregion: String,
+    val lang: String,
 )

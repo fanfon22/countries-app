@@ -8,7 +8,8 @@ import retrofit2.create
 
 object ApiClient {
 
-    val BASE_URL = "https://jsonplaceholder.typicode.com/"
+    val BASE_URL = "https://restcountries.com/v3.1/"
+
 
     val apiService: ApiService
     get(){
