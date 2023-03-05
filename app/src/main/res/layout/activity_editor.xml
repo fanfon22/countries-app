@@ -14,11 +14,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp">
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="write name"
+            android:hint="write country"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -27,11 +27,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp">
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/region"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="write username"
+            android:hint="write region"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -43,12 +43,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:hint="write email"
+            android:hint="write email who set here country"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add user" />
+        android:text="Add country" />
 </LinearLayout>

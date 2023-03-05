@@ -5,9 +5,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
- data class User (
+ data class Country (
     @PrimaryKey(autoGenerate = true) var uid: Int? = null,
-    @ColumnInfo(name = "name") var name: String?,
-    @ColumnInfo(name = "username") var username: String?,
+    @ColumnInfo(name = "country") var country: String?,
+    @ColumnInfo(name = "region") var region: String?,
     @ColumnInfo(name = "email") var email: String?,
          )

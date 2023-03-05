@@ -1,25 +1,26 @@
 package com.juhasz.country
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.android.material.button.MaterialButton
 import com.juhasz.country.data.AppDatabase
-import com.juhasz.country.data.User
+import com.juhasz.country.data.Country
 
 class EditorActivity : AppCompatActivity() {
-    private lateinit var name: EditText
-    private lateinit var username: EditText
+    private lateinit var country: EditText
+    private lateinit var region: EditText
     private lateinit var email: EditText
     private lateinit var btnSave: Button
     private lateinit var database: AppDatabase
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editor)
-        name = findViewById(R.id.name)
-        username = findViewById(R.id.username)
+        country = findViewById(R.id.country)
+        region = findViewById(R.id.region)
         email = findViewById(R.id.email)
         btnSave = findViewById(R.id.btn_save)
 
@@ -30,28 +31,28 @@ class EditorActivity : AppCompatActivity() {
             val id = intent.getInt("id",0)
             var user = database.userDao().get(id)
 
-            name.setText(user.name)
-            username.setText(user.username)
+            country.setText(user.country)
+            region.setText(user.region)
             email.setText(user.email)
         }
 
         btnSave.setOnClickListener {
-            if (name.text.length > 0 && username.text.length > 0 && email.text.length > 0) {
+            if (country.text.length > 0 && region.text.length > 0 && email.text.length > 0) {
                 if(intent!=null){
                     database.userDao().update(
-                        User(
+                        Country(
                             intent.getInt("id",0),
-                            name.text.toString(),
-                            username.text.toString(),
+                            country.text.toString(),
+                            region.text.toString(),
                             email.text.toString(),
                         )
                     )
                 } else{
                     database.userDao().insertAll(
-                        User(
+                        Country(
                             null,
-                            name.text.toString(),
-                            username.text.toString(),
+                            country.text.toString(),
+                            region.text.toString(),
                             email.text.toString(),
                         )
                     )

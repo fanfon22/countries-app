@@ -5,22 +5,22 @@ import androidx.room.*
 @Dao
 interface UserDao {
 
-    @Query("SELECT * FROM user")
-    fun getAll(): List<User>
+    @Query("SELECT * FROM country")
+    fun getAll(): List<Country>
 
-    @Query("SELECT * FROM user WHERE uid IN (:userIds)")
-    fun loadAllByIds(userIds: IntArray): List<User>
+    @Query("SELECT * FROM country WHERE uid IN (:userIds)")
+    fun loadAllByIds(userIds: IntArray): List<Country>
 
     @Insert
-    fun insertAll(vararg users: User)
+    fun insertAll(vararg countries: Country)
 
     @Delete
-    fun delete(user: User)
+    fun delete(country: Country)
 
-    @Query("SELECT * FROM user WHERE uid = :uid")
-    fun get(uid: Int) : User
+    @Query("SELECT * FROM Country WHERE uid = :uid")
+    fun get(uid: Int) : Country
 
     @Update
-    fun update(user: User)
+    fun update(country: Country)
 
 }

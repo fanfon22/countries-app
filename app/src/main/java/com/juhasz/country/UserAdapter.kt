@@ -1,15 +1,13 @@
 package com.juhasz.country
 
-import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.juhasz.country.data.User
-import com.juhasz.country.R;
+import com.juhasz.country.data.Country
 
-class UserAdapter(var list: List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+class UserAdapter(var list: List<Country>) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     private lateinit var dialog: Dialog
 
     fun setDialog(dialog: Dialog){
@@ -20,14 +18,14 @@ class UserAdapter(var list: List<User>) : RecyclerView.Adapter<UserAdapter.ViewH
     }
 
    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        var name: TextView
-        var username: TextView
+        var country: TextView
+        var region: TextView
         var email: TextView
 
         init{
 
-            name = view.findViewById(R.id.name)
-            username = view.findViewById(R.id.username)
+            country = view.findViewById(R.id.country)
+            region = view.findViewById(R.id.region)
             email = view.findViewById(R.id.email)
             view.setOnClickListener{
                 dialog.onClick(layoutPosition)
@@ -46,8 +44,8 @@ class UserAdapter(var list: List<User>) : RecyclerView.Adapter<UserAdapter.ViewH
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.name.text = list[position].name
-        holder.username.text = list[position].username
+        holder.country.text = list[position].country
+        holder.region.text = list[position].region
         holder.email.text = list[position].email
     }
 }

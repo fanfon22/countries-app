@@ -5,7 +5,6 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Adapter
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -14,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.juhasz.country.data.AppDatabase
-import com.juhasz.country.data.User
+import com.juhasz.country.data.Country
 import com.juhasz.country.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: RVAdapter;
     private lateinit var recyclerView: RecyclerView
     private lateinit var fab: FloatingActionButton
-    private var list = mutableListOf<User>()
+    private var list = mutableListOf<Country>()
     private lateinit var adapter2: UserAdapter;
     private lateinit var database: AppDatabase
 
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         adapter2.setDialog(object : UserAdapter.Dialog{
             override fun onClick(position: Int) {
                 val dialog = AlertDialog.Builder(this@MainActivity)
-                dialog.setTitle(list[position].name)
+                dialog.setTitle(list[position].country)
                 dialog.setItems(R.array.items_option, DialogInterface.OnClickListener{ dialog, which ->
                     if (which==0){
                         val intent = Intent(this@MainActivity, EditorActivity::class.java)
